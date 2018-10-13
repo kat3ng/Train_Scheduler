@@ -14,20 +14,12 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     ​
     <!-- Firebase Reference -->
+    <script src="https://www.gstatic.com/firebasejs/5.5.4/firebase.js"></script>
     ​
     <!-- Moment.js Reference -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
     ​
-    <style>
-        #employee-table th,
-  td {
-   display: inline-block;
-   width: 16.575%;
-  }
-​
-  }
-​
- </style>
+
 </head>
 ​
 
@@ -48,7 +40,7 @@
                 <div class="card mb-4">
                     <div class="card-header">Current Train Schedules</div>
                     <div class="card-body">
-                        <table class="table table-sm table-hover" id='-table'>
+                        <table class="table table-sm table-hover" id='train-time-table'>
                             <thead>
                                 <tr>
                                     <th scope="col">Train Name</th>
@@ -65,6 +57,7 @@
                 </div>
             </div>
         </div>
+
         <div class="col-md-12">
             <!-- Add Train -->
             <div class="card mb-4 p-4">
@@ -81,8 +74,8 @@
                             <input class="form-control" id="destination-input" placeholder="Destination" type="text">
                         </div>
                         <div class="form-group row">
-                            <label for="train-time-input">Train Time (HH:mm - Military Time)</label>
-                            <input class="form-control" id="train-time-input" placeholder="00:00AM/PM" type="HH:MM">
+                            <label for="star-time-input">Train Start Time (HH:mm - Military Time)</label>
+                            <input class="form-control" id="start-input" placeholder="00:00AM/PM" type="HH:MM">
                             <hh:mm></hh:mm>
                         </div>
                         <div class="form-group row">
@@ -99,25 +92,11 @@
     <div class="row">
         ​
     </div>
-    ​
-    <script src="https://www.gstatic.com/firebasejs/5.5.4/firebase.js"></script>
-    <script>
-        // Initialize Firebase
-        var config = {
-            apiKey: "AIzaSyC97u_SJy_E6_vpJ9PuuB6KLzMv9TEKfmE",
-            authDomain: "ke-train-scheduler.firebaseapp.com",
-            databaseURL: "https://ke-train-scheduler.firebaseio.com",
-            projectId: "ke-train-scheduler",
-            storageBucket: "ke-train-scheduler.appspot.com",
-            messagingSenderId: "581787075295"
-        };
-        firebase.initializeApp(config);
-    </script>
+
 
     <!-- JavaScript -->
-    <script src="https://www.gstatic.com/firebasejs/5.5.4/firebase.js"></script>
-    //
-    <script src="timesheetLogic.js"></script>
+
+    <script src="/assets/javascript/app.js"></script>
     ​
 </body>
 ​
