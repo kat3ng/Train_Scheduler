@@ -1,18 +1,19 @@
 <!DOCTYPE html>
-​
 <html lang="en-us">
-​
 
 <head>
     ​
     <meta charset="UTF-8">
-    <title>Employee Tracker</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Kat Eng | Train Scheduler</title>
     ​
     <!-- Bootstrap -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-    ​
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script> ​
     <!-- Firebase Reference -->
     <script src="https://www.gstatic.com/firebasejs/5.5.4/firebase.js"></script>
     ​
@@ -29,16 +30,16 @@
     <div class="container">
         ​
         <!-- Jumbotron -->
-        <div class="jumbotron" style="background-color: lightskyblue; color: white">
-            <h1 class="text-center">It's Train Time</h1>
-            <h3 class="text-center">Choo Choo Choose Your Train!</h3>
+        <div class="jumbotron jumbotron-fluid bg-transparent" style=" color: white">
+            <h1 class="text-center">Choo Choo Choose Your Train!</h1>
+            <h3 class="text-center">Train Time Table</h3>
         </div>
         ​
         <div class="row">
             <div class="col-md-12"> ​
                 <!-- Current Train Schedules-->
-                <div class="card mb-4">
-                    <div class="card-header">Current Train Schedules</div>
+                <div class="card text-white bg-transparent border-warning mb-4">
+                    <div class="card-header bg-transparent text-white border-warning mb-3">Current Train Schedules</div>
                     <div class="card-body">
                         <table class="table table-sm table-hover" id='train-time-table'>
                             <thead>
@@ -47,7 +48,7 @@
                                     <th scope="col">Destination</th>
                                     <th scope="col">First Train</th>
                                     <th scope="col">Frequency</th>
-                                    <th scope="col">Time Till Next Train</th>
+                                    <th scope="col">Min Till Next Train</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -58,10 +59,12 @@
             </div>
         </div>
 
+        <!-- Add Train -->
         <div class="col-md-12">
-            <!-- Add Train -->
-            <div class="card mb-4 p-4">
-                <div class="card-header">Add Train</div>
+            <div class="card text-white bg-transparent border-warning mb-4">
+                <div class="card-header text-white bg-transparent border-warning mb-3">
+                    Add Train
+                </div>
                 <div class="card-body">
                     <!-- Entry Form -->
                     <form>
@@ -82,7 +85,7 @@
                             <label for="frequency-input">Frequency (min)</label>
                             <input class="form-control" id="frequency-input" placeholder="10min" type="text">
                         </div>
-                        <button class="btn btn-primary float-right" id="add-train-btn">Submit</button>
+                        <button class="btn btn-info float-left" id="add-train-btn">Submit</button>
                     </form>
                 </div>
             </div>
