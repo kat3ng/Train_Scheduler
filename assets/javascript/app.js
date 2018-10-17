@@ -24,20 +24,59 @@ $("button").on("click", function (event) {
         "name": name,
         "destination": destination,
         "start": start,
-        "frequency": frequency
+        "frequency": frequency,
     });
+
+    // Moment JS Logic
+
+    //Frequency
+    var tFrequency = frequency;
+
+    //First Train Time
+    var firstTime = start;
+
+    // First Time(pushed back 1 year to make sure it comes before current time)
+    var firstTimeConverted = moment(firstTime, "HH:mm").subtract(1, "years");
+    console.log(firstTimeConverted);
+
+    // Current Time
+    var currentTime = moment();
+    console.log("CURRENT TIME: " + moment(currentTime).format("hh:mm"));
+
+    // Difference between the times
+    var diffTime = moment().diff(moment(firstTimeConverted), "minutes");
+    console.log("Difference in Time: " + diffTime);
+
+    // Time apart (remainder)
+    var tRemainder = diffTime % tFrequency;
+    console.log(tRemainder);
+
+    // Minutes Until Train
+    var tMinusTrain = tFrequency - tRemainder;
+    console.log("MINUTES TILL TRAIN: " + tMinusTrain);
+
+    // Next Train
+    var nextTrain = moment().add(tMinusTrain);
+    console.log("ARRIVAL TIME: " + moment(nextTrain).format("hh:mm"));
+
+    var arrivalTime = moment(nextTrain, "HH:mm");
     // find table and add a table row
     $("#train-time-table tbody").append(
         `
 <tr>
     <td>${name}</td>
     <td>${destination}</td>
-    <td>${start}</td>
-    <td></td>
     <td>${frequency}</td>
-    <td></td>
+    <td>${tMinusTrain}</td>
+    <td>${nextTrain}</td>
 </tr>
 `
     );
+
+
+
 });
+
+
+
 
