@@ -59,7 +59,7 @@ $("button").on("click", function (event) {
     var nextTrain = moment().add(tMinusTrain);
     console.log("ARRIVAL TIME: " + moment(nextTrain).format("hh:mm"));
 
-    var arrivalTime = moment(nextTrain, "HH:mm");
+    var arrivalTime = moment(nextTrain).format("hh:mm");
     // find table and add a table row
     $("#train-time-table tbody").append(
         `
@@ -68,7 +68,7 @@ $("button").on("click", function (event) {
     <td>${destination}</td>
     <td>${frequency}</td>
     <td>${tMinusTrain}</td>
-    <td>${nextTrain}</td>
+    <td>${arrivalTime}</td>
 </tr>
 `
     );
