@@ -27,6 +27,13 @@ $("button").on("click", function (event) {
         "frequency": frequency,
     });
 
+});
+
+database.ref().on("child_added", function (snapshot) {
+    var name = snapshot.val().name
+    var destination = snapshot.val().destination
+    var start = snapshot.val().start
+    var frequency = snapshot.val().frequency
     // Moment JS Logic
 
     //Frequency
@@ -72,11 +79,7 @@ $("button").on("click", function (event) {
 </tr>
 `
     );
-
-
-
-});
-
+})
 
 
 
