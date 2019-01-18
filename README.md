@@ -47,7 +47,7 @@ In this assignment I created a train schedule application that incorporates Fire
         
 ## Notes
 ---
-This assignment was pretty straight forward. I enjoyed working on it and was excited to try out some new CSS methods as well as learn moment.js. It had a bug that caused it to display the current time in both the 'current time' and 'arrival time' fields which stumped me at the time. However, I revisited it in week 18 of the class and was pleasantly suprised at how close I was to figuring it out. Looks like the classes worked Mark & Sue!
+This assignment was pretty straight forward. I enjoyed working on it and was excited to try out some new CSS methods as well as learn moment.js. It had a bug that caused it to display the current time in both the 'current time' and 'arrival time' fields which stumped me at the time. However, I revisited it in week 18 of the class and was pleasantly suprised at how easily I was able to debug it. Looks like the classes worked Mark & Sue!
 
 
 
