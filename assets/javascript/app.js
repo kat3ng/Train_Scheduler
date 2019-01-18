@@ -1,4 +1,3 @@
-
 // Initialize Firebase
 var config = {
     apiKey: "AIzaSyC97u_SJy_E6_vpJ9PuuB6KLzMv9TEKfmE",
@@ -38,13 +37,15 @@ database.ref().on("child_added", function (snapshot) {
 
     //Frequency
     var tFrequency = frequency;
+    console.log(`FREQUENCY: ${tFrequency}`)
 
     //First Train Time
     var firstTime = start;
+    console.log(`FIRST TRAIN DEPARTURE: ${firstTime}`)
 
     // First Time(pushed back 1 year to make sure it comes before current time)
-    var firstTimeConverted = moment(firstTime, "HH:mm").subtract(1, "years");
-    console.log(firstTimeConverted);
+    var firstTimeConverted = moment(firstTime, "hh:mm").subtract(1, "years");
+    // console.log(firstTimeConverted);
 
     // Current Time
     var currentTime = moment();
@@ -52,19 +53,23 @@ database.ref().on("child_added", function (snapshot) {
 
     // Difference between the times
     var diffTime = moment().diff(moment(firstTimeConverted), "minutes");
-    console.log("Difference in Time: " + diffTime);
+    // console.log("Difference in Time: " + diffTime);
 
-    // Time apart (remainder)
+    // Time apart (remainder) - time since last train
     var tRemainder = diffTime % tFrequency;
-    console.log(tRemainder);
+    console.log(`MINUES SINCE LAST TRAIN : ${ tRemainder } minutes`);
 
-    // Minutes Until Train
+    // Minutes Until Next Train
     var tMinusTrain = tFrequency - tRemainder;
-    console.log("MINUTES TILL TRAIN: " + tMinusTrain);
+    console.log("MINUTES TILL NEXT TRAIN: " + tMinusTrain);
 
     // Next Train
-    var nextTrain = moment().add(tMinusTrain);
-    console.log("ARRIVAL TIME: " + moment(nextTrain).format("hh:mm"));
+    var nextTrain = currentTime.add(tMinusTrain, 'minutes');
+    console.log(`NEXT TRAIN ARRIVES: ${nextTrain.format("hh:mm")}`)
+
+    // moment().add(tMinusTrain);
+    // console.log("ARRIVAL TIME: " + moment(nextTrain)
+    // .format("hh:mm"));
 
     var arrivalTime = moment(nextTrain).format("hh:mm");
     // find table and add a table row
@@ -80,6 +85,3 @@ database.ref().on("child_added", function (snapshot) {
 `
     );
 })
-
-
-

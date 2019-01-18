@@ -7,10 +7,21 @@
 
 ## Description & Requirements
 ---
+
+
 In this assignment I created a train schedule application that incorporates Firebase to host arrival and departure data.  It retrieves and manipulates this information with Moment.js. This website provides arrival times and how many minutes remain until they arrive at their station based on information provided by the user.
 
 
 ## How it Works
+
+  ![train homework](/assets/images/screen.png)
+
+1. 
+
+    ![train homework](/assets/images/enterData.png)
+
+![train homework](/assets/images/calculate.png)
+
 1. The user will submit information into the  
     
     * Train Name
@@ -26,9 +37,8 @@ In this assignment I created a train schedule application that incorporates Fire
   * Users from many different machines must be able to view same train times.
  
 
-### Example Site
 
-![train homework](Train_Time_Image.png)
+
 
 
         
