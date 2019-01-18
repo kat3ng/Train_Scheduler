@@ -9,9 +9,10 @@ var config = {
 };
 firebase.initializeApp(config);
 
-//
+
 var database = firebase.database();
 
+// Capture user input into variable to be used by js
 $("button").on("click", function (event) {
     event.preventDefault();
     var name = $("#train-name").val();
@@ -28,11 +29,14 @@ $("button").on("click", function (event) {
 
 });
 
+// Add each entry to the database
 database.ref().on("child_added", function (snapshot) {
     var name = snapshot.val().name
     var destination = snapshot.val().destination
     var start = snapshot.val().start
     var frequency = snapshot.val().frequency
+
+
     // Moment JS Logic
 
     //Frequency
@@ -66,10 +70,6 @@ database.ref().on("child_added", function (snapshot) {
     // Next Train
     var nextTrain = currentTime.add(tMinusTrain, 'minutes');
     console.log(`NEXT TRAIN ARRIVES: ${nextTrain.format("hh:mm")}`)
-
-    // moment().add(tMinusTrain);
-    // console.log("ARRIVAL TIME: " + moment(nextTrain)
-    // .format("hh:mm"));
 
     var arrivalTime = moment(nextTrain).format("hh:mm");
     // find table and add a table row
