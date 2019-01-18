@@ -14,9 +14,8 @@ In this assignment I created a train schedule application that incorporates Fire
 
 
 ## How it Works
----
-
-  ![train homework](/assets/images/screen.png)
+    *WELCOME SCREEN*
+   ![train homework](/assets/images/screen.png)
 
 1. The user will submit information into the dashboard 
     
